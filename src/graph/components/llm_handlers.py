@@ -16,28 +16,42 @@ from langchain_core.documents import Document
 from langchain_anthropic import ChatAnthropic
 from .configuration import Configuration
 
-def handle_anthropic_generation(
+def augment_context(
     question: str,
     context_docs: List[Document],
-    cfg: Configuration,
     system_prompt: str = GEN_LLM_PROMPT,
-) -> List[str]:
-    """Generate answers using Anthropic model based on question and context.
+) -> str:
+    """Combine retrieved context with system prompt.
     
     Args:
         question: The user's question
         context_docs: List of retrieved documents containing context
+        system_prompt: Base system prompt to augment
+        
+    Returns:
+        Augmented system prompt with context
+    """
+    # Combine all documents into one context string
+    context = "\n\n".join(doc.page_content for doc in context_docs)
+    
+    # augment system prompt with context
+    return f"\n{question}" + system_prompt + f"\n{context}"
+
+def generate_answers(
+    question: str,
+    augmented_prompt: str,
+    cfg: Configuration,
+) -> List[str]:
+    """Generate answers using Anthropic model based on augmented prompt.
+    
+    Args:
+        question: The user's question
+        augmented_prompt: System prompt augmented with context
         cfg: Configuration object with model settings
         
     Returns:
         List of generated answers (multiple if cfg.num_answers > 1)
     """
-    # Combine all documents into one context string
-    context = "\n\n".join(doc.page_content for doc in context_docs)
-
-    # augment system prompt with context
-    system_prompt = GEN_LLM_PROMPT + f"\n{context}"
-    
     # Initialize Anthropic client
     client = ChatAnthropic(
         model_name=cfg.default_model,
@@ -50,7 +64,7 @@ def handle_anthropic_generation(
     for _ in range(cfg.num_answers):
         try:
             messages = [
-                {"role": "system", "content": system_prompt},
+                {"role": "system", "content": augmented_prompt},
                 {"role": "user", "content": question}
             ]
             response = client.invoke(messages, temperature=cfg.temperature)

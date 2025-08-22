@@ -35,6 +35,9 @@ class RagState(TypedDict, total=False):
     context: List[Document]
     citation_chunks: List[Document]
 
+    # augmenting the system prompt
+    augmented_prompt: str
+
     # generation output
     answers: List[str]
     generation_metadata: Dict[str, str]

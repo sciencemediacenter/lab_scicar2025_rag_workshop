@@ -50,6 +50,12 @@ class Configuration(BaseModel):
         metadata={"description": "Cohere rerank model"}
     )
     
+    # Retrieval settings
+    top_k: int = Field(
+        default=10,
+        metadata={"description": "Number of chunks to retrieve"}
+    )
+
     # Generation settings
     num_answers: int = Field(
         default=1,
