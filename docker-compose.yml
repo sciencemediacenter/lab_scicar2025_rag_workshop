@@ -1,0 +1,11 @@
+# docker-compose.yml
+version: '3'
+services:
+  smc-rag-scicar:
+    container_name: smc-rag-scicar
+    build: .
+    volumes:
+      - .:/workspace
+    env_file:
+    - .env
+    command: sleep infinity

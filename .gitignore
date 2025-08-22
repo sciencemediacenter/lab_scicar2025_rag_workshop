@@ -1,0 +1,38 @@
+# VS Code
+.devcontainer/
+.vscode/
+.github/
+.cursorignore
+.DS_Store
+data/.DS_Store
+src/.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+src/helpers/__pycache__/
+
+# Files
+.env
+data/vectorstores/
+.milvus_demo.db.lock
+milvus_demo.db
+src/.vector_db/
+.vector_db/
+milvus_data/
+src/notebooks/run_experiment.ipynb
+
+# Data
+data/vectorstore/
+data/raw/stories_for_synth_data/
+data/raw/
+res/
+src/notebooks/test/
+notebooks/test_book.ipynb
+
+# deepeval cache
+deepeval/
+src/.deepeval_telemetry.txt
+.deepeval_telemtry.txt
+.deepeval_telemetry.txt
+.deepeval-cache.json
