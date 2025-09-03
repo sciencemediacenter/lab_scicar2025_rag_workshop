@@ -16,21 +16,21 @@
 
 # RAG-Demo 
 
-Dieses Repository enthält die Materialien und Code-Beispiele zum Vortrag über **Von Daten zur RAG: Ein Praxiseinblick in die Entwicklung RAG-basierter Chatbots** für die SciCAR 2025.  
+Dieses Repository enthält die Materialien und Code-Beispiele zum Vortrag  **Von Daten zur RAG: Ein Praxiseinblick in die Entwicklung RAG-basierter Chatbots** für die SciCAR 2025.  
 Es zeigt Schritt für Schritt, wie man aus Dokumenten einen durchsuchbaren Vektorstore baut, wie synthetische Datensätze entstehen und wie einfache und fortgeschrittene RAG-Systeme evaluiert werden können.
 
 ---
 
 ## 0. Voraussetzungen
 
-Um das Repository lokal nutzen zu können, benötigen Sie:
+Um das Repository lokal nutzen zu können, benötigt Ihr:
 
 - **Docker**: [Installationsanleitung](https://docs.docker.com/get-docker/)  
 - **Docker Compose** (wird oft mit Docker Desktop automatisch installiert)  
 - **Git** (um dieses Repository zu klonen):  
 ```
-  git clone <URL-ZUM-REPO>
-  cd <NAME-DES-REPOS>
+  git clone git@github.com:sciencemediacenter/lab_scicar2025_rag_workshop.git
+  cd lab_scicar2025_rag_workshop
 ```
 
 ## 1. Container starten
@@ -52,7 +52,7 @@ Das Projekt ist so vorbereitet, dass es direkt in einer Docker-Umgebung läuft.
 ## 2. .env-Datei einrichten
 
 Im Repository liegt eine Vorlage .env.example.
-Ihr könnt euch daraus eure persönliche .env erstellen:
+Ihr könnt euch daraus eure persönliche `.env` erstellen:
 ```
   cp .env.example .env
 ```
@@ -60,18 +60,18 @@ Ihr könnt euch daraus eure persönliche .env erstellen:
 Dort müssen dann die API Keys der einzelnen Sprachmodelle eingefügt werden:
 ```
   #######################################
-  #  LLM providers
+  #  LLM providers                      #
   #######################################
   OPENAI_API_KEY=
   ANTHROPIC_API_KEY=
   COHERE_API_KEY=
 ```
 
-- OpenAI und Anthropic erfordern kostenpflichtige Accounts.
+- OpenAI und Anthropic erfordern kostenpflichtige Accounts
 
-- Cohere bietet einen kostenlosen Zugang mit Rate-Limit.
+- Cohere bietet einen kostenlosen Zugang mit Rate-Limit
 
-Es reicht, einen Anbieter einzutragen. Falls ihr andere Modelle nutzen möchtet (z. B. Google), müssen die dazugehörigen Codestellen angepasst werden.
+Es reicht, einen Anbieter einzutragen. In diesem Fall (oder wenn ihr andere Modelle nutzen möchtet, z. B. Google) müsst ihr die dazugehörigen Codestellen anpassen.
 
 ## 3. Überblick über die Notebooks
 
@@ -81,7 +81,7 @@ Die wichtigsten Schritte laufen in den Jupyter-Notebooks im Ordner `notebooks/`:
 Aus der Dokumentensammlung wird ein semantisch durchsuchbarer Vektorstore erstellt.
 
 ##### 02_create_synthetic_dataset.ipynb
-Generiert synthetische Frage-Antwort-Paare, prüft Diversität und filtert für bessere Qualität.
+Generiert synthetische Frage-Antwort-Paare, filtert für bessere Qualität und prüft Diversität.
 
 ##### 03_run_naive_rag.ipynb
 Einfaches RAG-System mit den 3 Kernelementen (Retriever, LLM, Generator).
@@ -103,12 +103,12 @@ Exkurs: Beispiele für eigene Metriken und deren Einsatz.
 → Beispiel-Dokumente, Prompts, synthetische QA-Paare, Vektorstore
 
 `results/` 
-→ Ausgewertete Ergebnisse der RAG-Läufe
+→ Ausgewertete Ergebnisse der RAG Experimente
 
 `src/` 
 → Python-Code für Naive und Advanced RAG
 
-notebooks/ → Interaktive Jupyter-Notebooks (empfohlen für den Einstieg)
+`notebooks/` → Jupyter-Notebooks 
 
 ## 5. Slides zum Vortrag
 
