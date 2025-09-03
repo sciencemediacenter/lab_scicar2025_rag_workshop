@@ -62,11 +62,11 @@ class Configuration(BaseModel):
         metadata={"description": "Number of answers to generate"}
     )
     temperature: float = Field(
-        default=0.0,
+        default=0.5,
         metadata={"description": "Temperature parameter"}
     )
     max_tokens: int = Field(
-        default=512,
+        default=2048,
         metadata={"description": "Maximum number of output tokens in the response"}
     )
 
@@ -102,7 +102,7 @@ class Configuration(BaseModel):
     
     # Query decomposition settings
     use_query_decomposition: bool = Field(
-        default=False,
+        default=True,
         metadata={"description": "Whether to use query decomposition"}
     )
     max_sub_queries: int = Field(
