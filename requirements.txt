@@ -88,6 +88,7 @@ markdown-it-py==3.0.0
 MarkupSafe==3.0.2
 marshmallow==3.26.1
 matplotlib-inline==0.1.7
+matplotlib==3.10.6
 mdurl==0.1.2
 mmh3==5.2.0
 monotonic==1.6
