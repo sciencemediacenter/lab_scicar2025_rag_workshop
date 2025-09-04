@@ -27,32 +27,18 @@ Um das Repository lokal nutzen zu können, benötigt Ihr:
 
 - **Docker**: [Installationsanleitung](https://docs.docker.com/get-docker/)  
 - **Docker Compose** (wird oft mit Docker Desktop automatisch installiert)  
-- **Git** (um dieses Repository zu klonen):  
-```
-  git clone git@github.com:sciencemediacenter/lab_scicar2025_rag_workshop.git
-  cd lab_scicar2025_rag_workshop
-```
+- **Git** (um dann dieses Repository zu klonen):
 
-## 1. Container starten
-
-Das Projekt ist so vorbereitet, dass es direkt in einer Docker-Umgebung läuft.
-
-1. Container bauen:
+Repository klonen (Beispiel mit SSH, alternativ HTTPS):
 ```
-  docker-compose build
+git clone git@github.com:sciencemediacenter/lab_scicar2025_rag_workshop.git
+cd lab_scicar2025_rag_workshop
 ```
 
-2. Container starten:
-```
-  docker-compose up
-```
+## 1. .env-Datei einrichten
 
-3. Mit VS Code (oder einer anderen IDE) könnt ihr euch an den laufenden Container anhängen und die Jupyter-Notebooks im Ordner `notebooks/` ausführen.
-
-## 2. .env-Datei einrichten
-
-Im Repository liegt eine Vorlage .env.example.
-Ihr könnt euch daraus eure persönliche `.env` erstellen:
+Bevor ihr den Container startet, müsst ihr eine `.env` Datei erstellen.
+Im Repository liegt eine Vorlage .env.example. Ihr könnt euch daraus eure persönliche `.env` erstellen:
 ```
   cp .env.example .env
 ```
@@ -71,9 +57,38 @@ Dort müssen dann die API Keys der einzelnen Sprachmodelle eingefügt werden:
 
 - Cohere bietet einen kostenlosen Zugang mit Rate-Limit
 
-Es reicht, einen Anbieter einzutragen. In diesem Fall (oder wenn ihr andere Modelle nutzen möchtet, z. B. Google) müsst ihr die dazugehörigen Codestellen anpassen.
+Es reicht, **einen** Anbieter einzutragen. In diesem Fall (oder wenn ihr andere Modelle nutzen möchtet, z. B. Google) müsst ihr die entsprechenden Codestellen anpassen.
 
-## 3. Überblick über die Notebooks
+## 2. Container starten
+
+Das Projekt ist so vorbereitet, dass es direkt in einer Docker-Umgebung läuft.
+
+1. Container bauen:
+```
+  docker-compose build
+```
+
+2. Container starten:
+```
+  docker-compose up
+```
+
+3. Nach dem Start landet ihr im Root-Verzeichnis des Containers.
+Wechselt in das korrekte Arbeitsverzeichnis */workspace*.
+
+4. Mit VS Code (oder einer anderen IDE) könnt ihr euch an den laufenden Container anhängen und die Jupyter-Notebooks im Ordner `notebooks/` ausführen.
+
+3. VS Code Extensions (empfohlen)
+
+## 3. VS Code Extensions
+Damit ihr die Notebooks bearbeiten könnt, installiert bitte folgende Extensions in VS Code (lokal auf eurem Rechner):
+
+- Python
+- Jupyter
+
+Ohne diese Erweiterungen können die .ipynb-Dateien nicht direkt im Editor geöffnet und ausgeführt werden.
+
+## 4. Überblick über die Notebooks
 
 Die wichtigsten Schritte laufen in den Jupyter-Notebooks im Ordner `notebooks/`:
 
@@ -97,7 +112,7 @@ Vergleich der beiden Varianten, Ergebnisse werden grafisch dargestellt.
 ##### 06_use_own_metrics.ipynb
 Exkurs: Beispiele für eigene Metriken und deren Einsatz.
 
-## 4. Ergebnisse und Daten
+## 5. Ergebnisse und Daten
 
 `data/` 
 → Beispiel-Dokumente (SMC Artikel als Textfiles), Prompts (System-Prompt, Query Decomposition Prompt...), synthetische QA-Paare, Vektorstore (muss erst in `01_build_vectorstore.ipynb` erstellt werden)
@@ -111,6 +126,6 @@ Exkurs: Beispiele für eigene Metriken und deren Einsatz.
 `notebooks/` 
 → Jupyter-Notebooks (s. oben)
 
-## 5. Slides zum Vortrag
+## 6. Slides zum Vortrag
 
 Die Folien zum Vortrag liegen im Ordner `slides/`.
