@@ -100,15 +100,16 @@ Exkurs: Beispiele für eigene Metriken und deren Einsatz.
 ## 4. Ergebnisse und Daten
 
 `data/` 
-→ Beispiel-Dokumente, Prompts, synthetische QA-Paare, Vektorstore
+→ Beispiel-Dokumente (SMC Artikel als Textfiles), Prompts (System-Prompt, Query Decomposition Prompt...), synthetische QA-Paare, Vektorstore (muss erst in `01_build_vectorstore.ipynb` erstellt werden)
 
 `results/` 
-→ Ausgewertete Ergebnisse der RAG Experimente
+→ Ausgewertete Ergebnisse der RAG Experimente (mit und ohne Scores für die Metriken)
 
 `src/` 
-→ Python-Code für Naive und Advanced RAG
+→ Python-Code für Naive und Advanced RAG mit helper Funktionen
 
-`notebooks/` → Jupyter-Notebooks 
+`notebooks/` 
+→ Jupyter-Notebooks (s. oben)
 
 ## 5. Slides zum Vortrag
 

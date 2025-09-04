@@ -130,33 +130,5 @@ def plot_rag_metrics(metrics_dfs: dict[str, pd.DataFrame],
     ax_lat.set_title("Latency")
     ax_lat.grid(axis="y", linestyle="--", alpha=0.6)
 
-    # # Word count
-    # ax_wc = fig.add_subplot(gs[1, 1])
-
-    # for m_idx, method in enumerate(methods):
-    #     summ = metrics_dfs[method]
-    #     det  = detailed_dfs[method]
-
-    #     mean = summ["Word_Count"].iloc[0]
-    #     err  = summ["Word_Count_SE"].iloc[0]
-
-    #     ax_wc.bar(m_idx, mean, yerr=err,
-    #               width=bar_w * n_methods,
-    #               color=colors[m_idx], capsize=4)
-
-    #     ax_wc.scatter(np.full_like(det["Word_Count"], m_idx) + jitter,
-    #                   det["Word_Count"],
-    #                   s=18,
-    #                    alpha=0.2,
-    #                    edgecolors=(0, 0, 0, 0.2),
-    #                   facecolors=colors[m_idx])
-
-    # ax_wc.set_xticks(range(n_methods))
-    # ax_wc.set_xticklabels(methods)
-    # ax_wc.set_ylim(0, 800)
-    # ax_wc.set_ylabel("Words")
-    # ax_wc.set_title("Word Count")
-    # ax_wc.grid(axis="y", linestyle="--", alpha=0.6)
-
     plt.tight_layout()
     plt.show()
