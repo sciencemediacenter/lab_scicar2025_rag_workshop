@@ -74,14 +74,12 @@ Das Projekt ist so vorbereitet, dass es direkt in einer Docker-Umgebung läuft.
 ```
 
 3. Nach dem Start landet ihr im Root-Verzeichnis des Containers.
-Wechselt in das korrekte Arbeitsverzeichnis */workspace*.
+Wechselt in das korrekte Arbeitsverzeichnis: */workspace*.
 
 4. Mit VS Code (oder einer anderen IDE) könnt ihr euch an den laufenden Container anhängen und die Jupyter-Notebooks im Ordner `notebooks/` ausführen.
 
-3. VS Code Extensions (empfohlen)
-
 ## 3. VS Code Extensions
-Damit ihr die Notebooks bearbeiten könnt, installiert bitte folgende Extensions in VS Code (lokal auf eurem Rechner):
+Damit ihr die Notebooks bearbeiten könnt, installiert bitte folgende Extensions in VS Code:
 
 - Python
 - Jupyter
