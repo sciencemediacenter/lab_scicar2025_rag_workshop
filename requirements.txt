@@ -6,7 +6,7 @@ anthropic==0.60.0
 anyio==4.9.0
 asttokens==3.0.0
 attrs==25.3.0
-Authlib==1.6.1
+Authlib==1.9.1
 backoff==2.2.1
 bcrypt==4.3.0
 build==1.2.2.post1
